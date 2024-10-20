@@ -1,0 +1,25 @@
+{
+	"name": "conexao_tech",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"demand": "node ./JS/demand.js",
+		"stream": "node ./JS/stream.js",
+		"prod": "node ./dist/index.js",
+		"dev": "tsx src/index.ts",
+		"build": "tsc"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"dependencies": {
+		"aws-sdk": "^2.1691.0",
+		"dotenv": "^16.4.5"
+	},
+	"devDependencies": {
+		"@types/node": "^22.7.7",
+		"tsx": "^4.19.1"
+	}
+}
