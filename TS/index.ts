@@ -1,5 +1,5 @@
-import S3Demand from './TS/demand';
-import S3Stream from './TS/stream';
+import S3Demand from './demand';
+import S3Stream from './stream';
 import * as dotenv from 'dotenv';
 
 dotenv.config();
