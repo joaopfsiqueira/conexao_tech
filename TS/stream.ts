@@ -23,7 +23,6 @@ class S3Stream implements IS3Stream {
 
 	public async uploadFileStream(filePath: string, bucketName: string, key: string): Promise<void> {
 		try {
-			console.time('Upload com Stream');
 			const fileStream = fs.createReadStream(filePath);
 			const params: AWS.S3.PutObjectRequest = {
 				Bucket: bucketName,
@@ -32,7 +31,6 @@ class S3Stream implements IS3Stream {
 			};
 			const data = await this.s3.upload(params).promise();
 			console.log(`Arquivo enviado com sucesso: ${data.Location}`);
-			console.timeEnd('Upload com Stream');
 		} catch (err) {
 			console.error('Erro no upload:', err);
 		}
@@ -40,7 +38,6 @@ class S3Stream implements IS3Stream {
 
 	public async downloadFileStream(bucketName: string, key: string, downloadPath: string): Promise<void> {
 		try {
-			console.time('Download com Stream');
 			const params: AWS.S3.GetObjectRequest = {
 				Bucket: bucketName,
 				Key: key,
@@ -53,7 +50,6 @@ class S3Stream implements IS3Stream {
 					.pipe(fileStream)
 					.on('finish', () => {
 						console.log(`Arquivo baixado com sucesso: ${path.resolve(downloadPath)}`);
-						console.timeEnd('Download com Stream');
 						resolve();
 					})
 					.on('error', (err) => {

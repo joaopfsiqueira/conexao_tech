@@ -5,6 +5,7 @@ declare global {
 			readonly AMAZON_SECRET: string;
 			readonly AMAZON_REGION: string;
 			readonly AMAZON_S3_BUCKET: string;
+			readonly MONGO_URI: string;
 		}
 	}
 }

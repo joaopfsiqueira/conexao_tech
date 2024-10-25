@@ -1,10 +1,12 @@
 import S3Demand from './TS/demand';
 import S3Stream from './TS/stream';
+import * as dotenv from 'dotenv';
 
+dotenv.config();
 const runExample = async () => {
 	const filePath = './TS/359594.txt';
 	const key = '359594.txt';
-	const downloadPath = './TS/359594.txt';
+	const downloadPath = './359594.txt';
 
 	// const s3Demand = new S3Demand();
 	// await s3Demand.uploadFile(filePath, process.env.AMAZON_S3_BUCKET, key);
